@@ -1,6 +1,7 @@
 package spring.cloud.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import spring.cloud.service.HelloService;
 
@@ -17,7 +18,7 @@ public class ConsumeController {
     private HelloService helloService;
 
 
-    public String helloConsumer() {
+    public String helloConsumer(@RequestParam(value = "", defaultValue = "2") String a) {
         return helloService.hello();
     }
 }
